@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-go build
+CGO_ENABLED=0 GOOS=linux go build
 git add . && git commit -m 'deploy' && git push origin master
 # stop & remove all docker containers
 docker stop $(docker ps -a -q)
