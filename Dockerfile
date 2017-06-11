@@ -1,10 +1,4 @@
-# golang image where workspace (GOPATH) configured at /go.
-# https://hub.docker.com/_/golang/
-FROM golang:latest
-
-ADD golang-gin /go/golang-gin
-
-ENTRYPOINT /go/golang-gin
-
-# Service listens on port 7070.
-EXPOSE 7070
+FROM alpine:latest
+MAINTAINER Iskakov Zhanat <iskakov_zhanat@mail.ru>
+ADD golang-gin /usr/bin/golang-gin
+ENTRYPOINT ["golang-gin"]
